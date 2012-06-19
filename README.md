@@ -1,6 +1,6 @@
 # MemcachesPage
 
-Overrides `caches_page` and stores in memcached instead. Uses configuration from Rails cache store. Optionally takes a `:namespace` configuration key too.
+Overrides `caches_page` and stores in memcached instead. Uses configuration from Rails cache store.
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 Configuration:
 
-`config.cache_store :dalli_store, ['memcache.dev:11211'], expires_in: 604800, namespace: "site:"`
+`config.cache_store :dalli_store, ['memcache.dev:11211'], expires_in: 604800, namespace: "site"`
 
 Note, ensure compression isn't used, or if you do configure nginx to inflate it before serving.
 

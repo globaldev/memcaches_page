@@ -3,7 +3,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Paul Bowsher"]
   gem.email         = ["pbowsher@globalpersonals.co.uk"]
   gem.description   = %q{Overrides caches_page and stores in memcached instead.}
-  gem.summary       = %q{Uses configuration from Rails cache store. Optionally takes a :namespace configuration key too.}
+  gem.summary       = %q{Uses configuration from Rails cache store.}
   gem.homepage      = ""
   
   gem.add_dependency("rails", "~> 3.1")
@@ -13,5 +13,5 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "memcaches_page"
   gem.require_paths = ["lib"]
-  gem.version       = '0.1.1'
+  gem.version       = '0.1.2'
 end

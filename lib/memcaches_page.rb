@@ -2,13 +2,9 @@ module MemcachesPage
   extend ActiveSupport::Concern
   module ClassMethods
     def cache_page(content, path)
-      return unless perform_caching and Rails.cache.class.to_s == 'ActiveSupport::Cache::DalliStore'
+      return unless perform_caching
       
-      namespace = Rails.configuration.cache_store[2][:namespace] rescue nil
-      namespace ||= ""
-
-      cache = Rails.cache.instance_variable_get(:@data)
-      cache.set namespace + path.gsub('%', '%25'), content, nil, raw: true
+      Rails.cache.write path.gsub('%', '%25'), content, raw: true
     end
   end
   
