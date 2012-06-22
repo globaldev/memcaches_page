@@ -18,13 +18,15 @@ Or install it yourself as:
 
 ## Usage
 
-Configuration:
+### Configuration
 
-`config.cache_store :dalli_store, ['memcache.dev:11211'], expires_in: 604800, namespace: "site"`
+```ruby
+config.cache_store :dalli_store, ['memcache.dev:11211'], expires_in: 604800, namespace: "site"
+```
 
 Note, ensure compression isn't used, or if you do configure nginx to inflate it before serving.
 
-Caching:
+### Caching
 
 In your controller (or `ApplicationController`), simply include the module:
 
