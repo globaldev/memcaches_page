@@ -1,5 +1,10 @@
 # MemcachesPage Gem Changelog
 
+## 0.x.x - 2013/03/xx
+ * **Backwards-incompatible change**: Now called using `memcaches_page`. See
+README for details.
+ * Update for compatibility with Rails 3.2
+
 ## 0.1.3 - 2012/09/20
  * Allow passing through options to `Rails.cache.write`, e.g. `cache_page expires_in: 5.minutes`
 
