@@ -1,6 +1,6 @@
 # MemcachesPage Gem Changelog
 
-## 0.x.x - 2013/03/xx
+## 0.2.0 - 2013/03/11
  * **Backwards-incompatible change**: Now called using `memcaches_page`. See
 README for details.
  * Update for compatibility with Rails 3.2
