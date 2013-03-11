@@ -1,6 +1,7 @@
 # MemcachesPage
 
-Overrides `caches_page` and stores in memcached instead. Uses configuration from Rails cache store.
+Overrides `caches_page` and stores in memcached instead. Uses configuration from
+Rails cache store.
 
 ## Installation
 
@@ -24,11 +25,12 @@ Or install it yourself as:
 config.cache_store :dalli_store, ['memcache.dev:11211'], expires_in: 604800, namespace: "site"
 ```
 
-Note, ensure compression isn't used, or if you do configure nginx to inflate it before serving.
+Note, ensure compression isn't used, or if you do configure nginx to inflate it
+before serving.
 
 ### Caching
 
-In your controller (or `ApplicationController`), simply include the module:
+Include the module in your `ApplicationController`:
 
 ```ruby
 class ApplicationController < ActionController::Base
@@ -36,7 +38,13 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-Then use `caches_page` as normal.
+Then use `memcaches_page` in a similar way to `caches_page`:
+
+```ruby
+class SiteController < ApplicationController
+  memcaches_page :index, :show, unless: -> { |c| c.current_user.nil? }
+end
+```
 
 ## Contributing
 
