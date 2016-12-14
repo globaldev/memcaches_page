@@ -6,7 +6,7 @@ module MemcachesPage
       options = actions.extract_options!
 
       after_filter({:only => actions}.merge(options)) do |c|
-        c.memcache_page
+        c.memcache_page(options)
       end
     end
 
