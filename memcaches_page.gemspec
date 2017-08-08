@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{Uses configuration from Rails cache store.}
   gem.homepage      = ""
 
-  gem.add_dependency("rails", "~> 3.2")
+  gem.add_dependency("rails", "~> 5.1.3")
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
