@@ -5,7 +5,7 @@ module MemcachesPage
       return unless perform_caching
       options = actions.extract_options!
 
-      after_filter({:only => actions}.merge(options)) do |c|
+      after_action({:only => actions}.merge(options)) do |c|
         c.memcache_page(options)
       end
     end
