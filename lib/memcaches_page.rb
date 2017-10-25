@@ -21,4 +21,8 @@ module MemcachesPage
     return unless self.class.perform_caching && caching_allowed? && !request.params.key?('no-cache')
     self.class.memcache_page(response.body, request.fullpath, options)
   end
+
+  def caching_allowed?
+     request.get? && response.status == 200
+   end
 end
