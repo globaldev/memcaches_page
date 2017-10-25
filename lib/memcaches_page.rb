@@ -5,7 +5,7 @@ module MemcachesPage
       return unless perform_caching
       options = actions.extract_options!
 
-      after_filter({:only => actions}.merge(options)) do |c|
+      after_action({:only => actions}.merge(options)) do |c|
         c.memcache_page(options)
       end
     end
@@ -21,4 +21,8 @@ module MemcachesPage
     return unless self.class.perform_caching && caching_allowed? && !request.params.key?('no-cache')
     self.class.memcache_page(response.body, request.fullpath, options)
   end
+
+  def caching_allowed?
+     request.get? && response.status == 200
+   end
 end
